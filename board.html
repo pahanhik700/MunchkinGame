@@ -6,7 +6,127 @@
     <link href="assets/css/board.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
-<body class="xsaddas">
+<body>
+
+    <!-- блок с соперниками -->
+    <div class="div_opponents">
+        <!-- блок с информацией об игроке -->
+        <div class="player_info">
+
+            <!-- блок с аватаром игрока и его ником -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="form_avatar">
+                    <img class="avatar" src="assets/media/avatar/манчкин.PNG">
+                </div>
+                <div class="Nick_name">
+                    Nick_name
+                </div>
+            </div>
+
+            <!-- блок с визуальной информацией -->
+            <div class="visual_info_div">
+                <div>Уровень: 1</div>
+                <div>Сила: 1</div>
+                <div>Деньги: 1000</div>
+            </div>
+
+            <!-- блок с кнопками -->
+            <div class="buttons_div">
+                <!-- верхние 3 кнопки -->
+                <div class="buttons_up">
+                    <form>
+                        <button type="button">Расса</button>
+                    </form>
+                    <form>
+                        <button type="button">Класс</button>
+                    </form>
+                    <form>
+                        <button type="button">Шмотки</button>
+                    </form>
+                </div>
+
+                <!-- нижние 2 кнопки -->
+                <div class="buttons_down">
+                    <form >
+                        <button type="button">Инвентарь</button>
+                    </form>
+                    <form>
+                        <button type="button">Проклятия</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="player_info">
+
+            <!-- блок с аватаром игрока и его ником -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="form_avatar">
+                    <img class="avatar" src="assets/media/avatar/манчкин.PNG">
+                </div>
+                <div class="Nick_name">
+                    Nick_name
+                </div>
+            </div>
+
+            <!-- блок с визуальной информацией -->
+            <div class="visual_info_div">
+                <div>Уровень: 1</div>
+                <div>Сила: 1</div>
+                <div>Деньги: 1000</div>
+            </div>
+
+            <!-- блок с кнопками -->
+            <div class="buttons_div">
+                <!-- верхние 3 кнопки -->
+                <div class="buttons_up">
+                    <form>
+                        <button type="button">Расса</button>
+                    </form>
+                    <form>
+                        <button type="button">Класс</button>
+                    </form>
+                    <form>
+                        <button type="button">Шмотки</button>
+                    </form>
+                </div>
+
+                <!-- нижние 2 кнопки -->
+                <div class="buttons_down">
+                    <form >
+                        <button type="button">Инвентарь</button>
+                    </form>
+                    <form>
+                        <button type="button">Проклятия</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- блок с картами сокровищ дверей и с картами, скинутыми игроками-->
+    <div class="game_cards">
+
+        <!-- бок с картами сокровищ и дверей -->
+        <div class="div_doors_treasures">
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+
+        <!-- бок с картами, скинутыми игроками -->
+        <div class="div_drop_cards">
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+
+    </div>
+
+
     <!-- блок, в котором расположены элементы интерфейса игрока (карты, информация и выложенные карты) -->
     <div class="player_interface" id="game">
 
@@ -26,7 +146,9 @@
 
             <!-- блок с визуальной информацией -->
             <div class="visual_info_div">
-
+                <div>Уровень: 1</div>
+                <div>Сила: 1</div>
+                <div>Деньги: 1000</div>
             </div>
 
             <!-- блок с кнопками -->
@@ -66,8 +188,16 @@
             <div class="card card2"></div>
         </div>
 
-        <!-- блок с информацией о видимых всеми картах игрока -->
-        <div class="open_card_info">open card info</div>
+        <!-- блок c с действиями игрока -->
+        <div class="player_action">
+            Action_batton 
+            <!-- <form class="action_button_1">
+                <button type="button"><p>Завершить ход</p></button>
+            </form>
+            <form>
+                <button type="button" class="action_button_2"><p>Временно забрать ход</p></button>
+            </form> -->
+        </div>
 
     </div>
         

@@ -4,6 +4,83 @@ body{
     background-size: cover; 
     overflow:hidden;
 }
+/* <!-- блок с соперниками -->............................... */
+.div_opponents {
+    position: absolute;
+    width: 101%;
+    height: 200px;
+    margin-top: -15%;
+    margin-left: -1%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.div_opponents .player_info {
+    margin-top: 5px;
+    width: 17.5%;
+    height: 80%;
+}
+
+.div_opponents .div_avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position:relative;
+    width: 100%;
+    height: 30%;
+}
+
+.div_opponents  .form_avatar {
+    position: relative;
+    width:17.5%;
+    height: 95%;
+    margin-top: 0;
+    margin-left: 5%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    border-style:double;
+    border-color: black;
+}
+
+.div_opponents .Nick_name {
+    bottom: 20%;
+    margin-left: 35%;
+    font-weight: bold;
+    font-size: 115%;
+    color:#cf7c34;
+}
+/* .......................................................... */
+
+
+
+/* блок с картами игры (двери/сокровища)..................... */
+.game_cards {
+    width: 20%;
+    height: 300px;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: row;
+}
+
+.div_doors_treasures {
+    width: 90px;
+    height: 70%;
+}
+
+.div_drop_cards {
+    width: 90px;
+    height: 70%;
+    padding-left: 7.5px;
+}
+
+.div_doors_treasures div {
+    background-color: darkblue;
+}
+/* .......................................................... */
 
 .player_interface {
     width: 99%;
@@ -13,14 +90,15 @@ body{
     position:absolute;
     bottom:0;
 }
-
+/* юи игрока............................................................... */
 .player_info {
     display: flex;
     flex-direction: column;
     background-color:burlywood;
-    width: 25%;
-    height: 100%;
+    width: 20%;
+    height: 90%;
     margin-left: 3%;
+    margin-top: 1.5%;
 
     border-style:double;
     border-color: black;
@@ -47,7 +125,7 @@ body{
     position: absolute;
     width:25%;
     height: 133%;
-    margin-top: -20%;
+    margin-top: -25%;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -59,7 +137,7 @@ body{
 }
 
 .avatar {
-    max-width: 100%;
+    max-width: 110%;
     max-height: 110%;
 }
 
@@ -74,8 +152,19 @@ body{
 
 /* блок с визуальной информацией............................ */
 .visual_info_div {
+    display: flex;
     width: 100%;
     height: 20%;
+}
+
+.visual_info_div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 33.4%;
+    border-style:solid;
+    background-image: url(../media/Табличка.PNG);
 }
 /* ............................................................ */
 
@@ -84,6 +173,9 @@ body{
 .buttons_div {
     width: 100%;
     height: 50%;
+    margin-top: 1.5%;
+    background-image: url("../media/мульт_форма.jpg");
+
 }
 
 .buttons_up {
@@ -104,7 +196,7 @@ body{
 
 .buttons_down form {
     width: 50%;
-    height: 100%;
+    height: 115%;
 }
 
 .buttons_div button {
@@ -115,11 +207,14 @@ body{
     background-image: url("../media/фон\ кнопок1.jpg");
 }
 /* ............................................................ */
+
+
+/*карты игрока..................................................*/
 .player_cards {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 42%;
+    width: 50%;
     height: 100%;
     margin-left: 1%;
 
@@ -143,38 +238,29 @@ body{
     height: 70%;
     transform: scale(1.3);
 }
+/* ................................................................. */
 
-.open_card_info {
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
-    font-size: 30px;
 
-    background-color:rgb(23, 208, 214);
+/* действия игрока............................................. */
+.player_action {
     width: 25%;
     height: 100%;
-    margin-left: 1%;
-}
-
-
-/* проверка */
-/* .buttons {
-    position: absolute;
-    top: 55%;
     display: flex;
+    align-items: center;
     justify-content: center;
-    width: 99%;
-    height: 19%;
+    margin-left: 1%;
+    padding-left: 30px;
+    background-color: lawngreen;
+    font-size: 30px;
 }
 
-.plus {
-    width: 10%;
-    height: 100%;
-    background-image: url("img/plus_.png");
+.player_action .action_button_1 {
+    padding-top: 10%;
 }
 
-.minus {
-    width: 10%;
-    height: 100%;
-    background-image: url("img/minus_.png");
-} */
+.player_action form {
+    width: 80%;
+    height: 80%;
+}
+
+/* ............................................................ */
