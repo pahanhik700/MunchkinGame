@@ -47,7 +47,7 @@ class Spell {
 }
 
 $(document).ready(function(){
-    $.get("Монстры.txt", function(data) {
+    $.get("assets/text_card/Monster.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < items.length; i++){
             monster.push(items[i].split('?'));
@@ -56,7 +56,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-    $.get("Проклятия.txt", function(data) {
+    $.get("assets/text_card/Curse.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < 8; i++){
             curse.push(items[i].split('?'));
