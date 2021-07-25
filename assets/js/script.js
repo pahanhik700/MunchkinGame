@@ -47,7 +47,7 @@ class Spell {
 }
 
 $(document).ready(function(){
-    $.get("assets/text_card/Monster.txt", function(data) {
+    $.get("assets/text_card/Monsters.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < items.length; i++){
             monster.push(items[i].split('?'));
