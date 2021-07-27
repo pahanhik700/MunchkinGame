@@ -57,7 +57,7 @@ class Person {
 }
 
 $(document).ready(function(){
-    $.get("assets/text_card/Монстры.txt", function(data) {
+    $.get("assets/text_card/Monsters.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < 8; i++){
             monster[i] = [];
