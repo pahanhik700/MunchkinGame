@@ -3,7 +3,6 @@ var monster = [];
 var curse = [];
 var coloda = [];
 
-
 class Enemy {
     constructor(level, name, buff, obscenity, level_person, treacyres){
         this.level = level;
@@ -46,17 +45,33 @@ class Spell {
     }
 }
 
+class Card {
+    
+}
+
+class Person {
+    constructor() {}
+    level_up() {
+        document.getElementById("id1").innerHTML += "1";
+    }
+}
+
 $(document).ready(function(){
-    $.get("assets/text_card/Monsters.txt", function(data) {
+    $.get("Монстры.txt", function(data) {
         let items = data.split('%');
-        for (let i = 0; i < items.length; i++){
-            monster.push(items[i].split('?'));
+        for (let i = 0; i < 8; i++){
+            monster[i] = [];
+            /*monster.splice(0, 0, ...monster.splice(-1, 1, items[i].split('?')));*/
+            let ite = items[i].split("?");
+            for (let j = 0; j < ite.length - 1; j++){
+                monster[i][j] = ite[j].substr(2,10000);
+            }
         }
     })
 });
 
 $(document).ready(function(){
-    $.get("assets/text_card/Curse.txt", function(data) {
+    $.get("Проклятия.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < 8; i++){
             curse.push(items[i].split('?'));
@@ -65,7 +80,6 @@ $(document).ready(function(){
 });
 
 for (let i = 0; i < 7; i++){
-    let q = new Enemy(monster[i][0], monster[i][1], monster[i][2], monster[i][3], monster[i][4], monster[i][5]);
+    let q = new Enemy(monster[i], monster[i], monster[i], monster[i], monster[i], monster[i]);
     coloda.push(q);
 }
-//не видит в массиве monster элементы по индексам, из-за чего не заполняется массив coloda
