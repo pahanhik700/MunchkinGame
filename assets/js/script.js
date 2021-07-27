@@ -44,11 +44,6 @@ class Spell {
         this.description = description;
     }
 }
-
-class Card {
-    
-}
-
 class Person {
     constructor() {}
     level_up() {
@@ -60,21 +55,7 @@ $(document).ready(function(){
     $.get("assets/text_card/Monsters.txt", function(data) {
         let items = data.split('%');
         for (let i = 0; i < 8; i++){
-            monster[i] = [];
-            /*monster.splice(0, 0, ...monster.splice(-1, 1, items[i].split('?')));*/
-            let ite = items[i].split("?");
-            for (let j = 0; j < ite.length - 1; j++){
-                monster[i][j] = ite[j].substr(2,10000);
-            }
-        }
-    })
-});
-
-$(document).ready(function(){
-    $.get("Проклятия.txt", function(data) {
-        let items = data.split('%');
-        for (let i = 0; i < 8; i++){
-            curse.push(items[i].split('?'));
+            monster.splice(0, 0, ...monster.splice(-1, 1, items[i].split('?')));
         }
     })
 });
