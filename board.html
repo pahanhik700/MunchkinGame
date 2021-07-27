@@ -25,7 +25,7 @@
 
             <!-- Окно с картами монстра -->
             <div class="cards_fight">
-                    <div class="card" onclick="Open_Info_Card()"></div>   
+                    <div class="card" onclick="Open_Info_Card()"></div>
                     <div class="card" onclick="Open_Info_Card()"></div>
                     <div class="card" onclick="Open_Info_Card()"></div>
                     <div class="card" onclick="Open_Info_Card()"></div>
@@ -50,7 +50,7 @@
         </div>
 
         <div class="line_fight"></div>
-        
+
         <div class="player_fight">
             <!-- блок с аватаром игрока и его ником -->
             <div class="div_avatar">
@@ -65,7 +65,7 @@
             <div class="line"></div>
 
             <div class="cards_fight">
-                <div class="card" onclick="Open_Info_Card()"></div>   
+                <div class="card" onclick="Open_Info_Card()"></div>
                 <div class="card" onclick="Open_Info_Card()"></div>
                 <div class="card" onclick="Open_Info_Card()"></div>
                 <div class="card" onclick="Open_Info_Card()"></div>
@@ -180,7 +180,7 @@
 
         <!-- бок с картами сокровищ и дверей -->
         <div class="div_doors_treasures">
-            <div class="card"></div>
+            <div class="card"><img src ="assets/media/phonk.jpg"></div>
             <div class="card"></div>
         </div>
 
@@ -205,16 +205,16 @@
                 <div class="form_avatar">
                     <img class="avatar" src="assets/media/avatar/манчкин.PNG">
                 </div>
-                <div class="Nick_name">
+                <div class="Nick_name" id = "NickName">
                     Nick_name
                 </div>
             </div>
 
             <!-- блок с визуальной информацией -->
             <div class="visual_info_div">
-                <div>Уровень: 1</div>
-                <div>Сила: 1</div>
-                <div>Деньги: 1000</div>
+                <div id = "Level">Уровень: 1</div>
+                <div id = "Power">Сила: 1</div>
+                <div id = "Money">Деньги: 1000</div>
             </div>
 
             <!-- блок с кнопками -->
@@ -312,7 +312,7 @@
             </div>
         </div>
     </div>
-    
+
     <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->>
     <div class="window_player_special_card">
         <p class="special_card_name">Надетые шмотки игрока Nick_Name</p>

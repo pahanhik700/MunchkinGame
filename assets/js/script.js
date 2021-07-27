@@ -3,6 +3,44 @@ var monster = [];
 var curse = [];
 var coloda = [];
 
+class Player {
+  constructor(name, level, power, money, race, clas, items, inventory, curses) {
+    this.name = name;
+    this.level = level;
+    this.power = power;
+    this.money = money;
+    this.race = race;
+    this.clas = clas;
+    this.items = items;
+    this.inventory = inventory;
+    this.curses = curses;
+  }
+  LevelChange() {
+    document.getElementById("Level").innerHTML = "Уровень: " + (this.level);
+  }
+  PowerChange() {
+    document.getElementById("Power").innerHTML = "Сила: " + (this.power);
+  }
+  MoneyChange() {
+    document.getElementById("Money").innerHTML = "Голда: " + (this.money);
+  }
+  NameChange() {
+    document.getElementById("NickName").innerHTML = (this.name);
+  }
+  ClasChange() {
+
+  }
+  ItemsChange() {
+
+  }
+  InventoryChange() {
+
+  }
+  CursesChange() {
+
+  }
+}
+
 class Enemy {
     constructor(level, name, buff, obscenity, level_person, treacyres){
         this.level = level;
@@ -49,18 +87,4 @@ class Person {
     level_up() {
         document.getElementById("id1").innerHTML += "1";
     }
-}
-
-$(document).ready(function(){
-    $.get("assets/text_card/Monsters.txt", function(data) {
-        let items = data.split('%');
-        for (let i = 0; i < 8; i++){
-            monster.splice(0, 0, ...monster.splice(-1, 1, items[i].split('?')));
-        }
-    })
-});
-
-for (let i = 0; i < 7; i++){
-    let q = new Enemy(monster[i], monster[i], monster[i], monster[i], monster[i], monster[i]);
-    coloda.push(q);
 }
