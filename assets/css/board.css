@@ -217,7 +217,6 @@ body{
     width: 50%;
     height: 100%;
     margin-left: 1%;
-
 }
 
 .card {
@@ -243,24 +242,302 @@ body{
 
 /* действия игрока............................................. */
 .player_action {
-    width: 25%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 1%;
-    padding-left: 30px;
-    background-color: lawngreen;
+    width: 15%;
+    height: 35%;
+    margin-left: 5%;
+    margin-top: 5%;
     font-size: 30px;
 }
 
-.player_action .action_button_1 {
-    padding-top: 10%;
-}
-
 .player_action form {
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 50%;
+}
+.player_action button {
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    background-image: url(../media/Табличка.PNG);
+}
+/* ............................................................ */
+
+/* <!-- всплывающее окно, при нажатии на карту -->............. */
+.card_window {
+    display:none;
+    position: absolute;
+    margin: -30% 37%;
+    width: 20%;
+    height: 700px;
+    border-radius: 3%;
+    background-image: url(../media/мульт_форма.jpg);
+    border-style: groove;
+    border-color:rgb(192, 50, 7);
+    border-width: 5px;
 }
 
+.card_window .card {
+    margin: 5% auto;
+    width: 80%;
+    height: 60%;
+}
+
+.card_window .card:hover {
+    transform: scale(1);
+}
+
+.card_window_buttons {
+    margin: 5% auto;
+    width: 75%;
+    height: 30%;
+}
+
+.line_buttons {
+    width: 100%;
+    height: 18%;
+    display: flex;
+    margin-top: 10px;
+}
+
+.line_buttons form {
+    width: 50%;
+    height: 100%;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-style:ridge;
+    border-color: rgb(201, 188, 188);
+}
+
+.line_buttons button {
+    width: 100%;
+    height: 100%;
+    background-image: url(../media/Табличка.PNG);
+}
+
+.div_exit_button {
+    width: 100%;
+    height: 18%;
+    margin-top: 7%;
+}
+
+.div_exit_button form {
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    border-style:ridge;
+    border-color: rgb(201, 188, 188);
+}
+
+.div_exit_button button {
+    width: 100%;
+    height: 100%;
+    background-image: url(../media/Табличка.PNG);
+}
 /* ............................................................ */
+
+/* <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->> */
+.window_player_special_card {
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    display: none;
+    margin: -30% 23%;
+    background-image: url(../media/мульт_форма.jpg);
+    border-style: groove;
+    border-color:rgb(192, 50, 7);
+    border-width: 5px;
+    border-radius: 3%;
+    overflow: hidden;
+}
+
+.special_card_name {
+    margin-left: 28%;
+    color:#e9dcd2;
+    font-size: 20px;
+}
+
+.line {
+    border-bottom: 2px solid #f00;
+}
+
+.div_special_card {
+    width: 100%;
+    height: 75%;
+}
+
+.window_player_special_card form{
+    width: 15%;
+    height: 8%;
+    margin: 1% auto;
+    border-style:ridge;
+    border-color: rgb(201, 188, 188);
+}
+
+.window_player_special_card button {
+    width: 100%;
+    height: 100%;
+    background-image: url(../media/Табличка.PNG);
+}
+
+/* .............................................................................................*/
+
+/* окно боя..................................................................................... */
+.fight_window {
+    width: 45%;
+    height: 55%;
+    margin: -3% 26%;
+    position: absolute;
+    background-image: url(../media/мульт_форма.jpg);
+    display: none;
+    border-radius: 3%;
+    border-style: groove;
+    border-color:rgb(192, 50, 7);
+    overflow: hidden;
+}
+
+.monster_cards {
+    width: 40%;
+    height: 100%;
+}
+
+.line_fight {
+    height: 100%;
+    background-color: crimson;
+    border-left: 2px solid rgb(192, 50, 7);
+}
+
+.fight_buttons {
+    width: 20%;
+    height: 100%;
+    padding-top: 30%;
+}
+
+.fight_buttons form {
+    width: 100%;
+    height: 10%;
+    margin-top: 10%;
+}
+
+.fight_buttons button {
+    width: 100%;
+    height: 100%;
+    background-image: url(../media/Табличка.PNG);
+    font-size: 15px
+}
+ 
+.fight_buttons p {
+    margin-top: -137%;
+    margin-bottom: 70%;
+    margin-left: 25%;
+    font-size: 20px;
+    color:#e9dcd2;
+}
+
+.player_fight {
+    width: 40%;
+    height: 100%;
+}
+
+.player_fight .div_avatar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position:relative;
+    width: 100%;
+    height: 12%;
+}
+
+.player_fight  .form_avatar {
+    position: relative;
+    width:17.5%;
+    height: 95%;
+    margin-top: 0;
+    margin-left: 5%;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    border-style:double;
+    border-color: black;
+}
+
+.player_fight .Nick_name {
+    bottom: 25%;
+    margin-left: 35%;
+    font-weight: bold;
+    font-size: 115%;
+    color:#cf7c34;
+}
+
+.monster_cards .div_avatar {
+    height: 12%;
+}
+
+.monster_cards .Nick_name {
+    bottom: 25%;
+}
+
+.cards_fight {
+    width: 100%;
+    height: 87.5%;
+    margin-top: 2%;
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.cards_fight .card {
+    width: 40%;
+    height: 45%;
+    margin-left: 5%;
+}
+
+.cards_fight .card:hover {
+    transform: scale(1);
+}
+/* .............................................................................................*/
+
+/* <!-- Всплывающее окно подтверждения победы над монстром   -->............................... */
+.window_success {
+    width: 30%;
+    height: 200px;
+    position: absolute;
+    background-image: url(../media/мульт_форма.jpg);
+    border-radius: 3%;
+    border-style: groove;
+    border-color:rgb(192, 50, 7);
+    overflow: hidden;
+    margin: -35% 33%;
+    display: none;
+    flex-direction:column;
+    flex-wrap:wrap;
+    align-items: center;
+}
+
+.window_success p {
+    font-size: 20px;
+    color:#e9dcd2;
+}
+
+.success_button {
+    margin-top: 5%;
+    width: 50%;
+    height: 20%;
+    display: flex;
+}
+
+.success_button form {
+    width: 45%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+.success_button button {
+    width: 100%;
+    height: 100%;
+    background-image: url(../media/Табличка.PNG);
+    font-size: 15px;
+}
+
+
+/* .............................................................................................*/

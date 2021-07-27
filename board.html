@@ -4,11 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="assets/css/board.css" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/board.js"></script>
     <title>Document</title>
 </head>
 <body>
+
+    <!-- окно боя -->
+    <div class="fight_window">
+        <div class="monster_cards">
+            <!-- монстр -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="Nick_name">
+                    Монстр
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <!-- Окно с картами монстра -->
+            <div class="cards_fight">
+                    <div class="card" onclick="Open_Info_Card()"></div>   
+                    <div class="card" onclick="Open_Info_Card()"></div>
+                    <div class="card" onclick="Open_Info_Card()"></div>
+                    <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+        </div>
+        <div class="line_fight"></div>
+
+        <div class="fight_buttons">
+            <p>20 vs 20</p>
+            <form>
+                <button type="button" class="first_button">Позвать на помощь</button>
+            </form>
+            <form>
+                <button type="button">Голосовать за победу</button>
+            </form>
+            <form>
+                <button type="button">Смыться</button>
+            </form>
+            <form>
+                <button type="button">Не драться</button>
+            </form>
+        </div>
+
+        <div class="line_fight"></div>
+        
+        <div class="player_fight">
+            <!-- блок с аватаром игрока и его ником -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="form_avatar">
+                    <img class="avatar" src="assets/media/avatar/манчкин.PNG">
+                </div>
+                <div class="Nick_name">
+                    Nick_name
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="cards_fight">
+                <div class="card" onclick="Open_Info_Card()"></div>   
+                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" onclick="Open_Info_Card()"></div>
+        </div>
+        </div>
+    </div>
 
     <!-- блок с соперниками -->
     <div class="div_opponents">
@@ -38,29 +99,30 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button">Расса</button>
+                        <button type="button" onclick="Open_Special_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button">Класс</button>
+                        <button type="button" onclick="Open_Special_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
 
         </div>
 
+        <!-- блок с информацией об игроке -->
         <div class="player_info">
 
             <!-- блок с аватаром игрока и его ником -->
@@ -86,23 +148,23 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button">Расса</button>
+                        <button type="button" onclick="Open_Special_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button">Класс</button>
+                        <button type="button" onclick="Open_Special_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
@@ -158,23 +220,23 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button">Расса</button>
+                        <button type="button" onclick="Open_Special_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button">Класс</button>
+                        <button type="button" onclick="Open_Special_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
@@ -183,26 +245,95 @@
 
         <!-- блок с картами игрока -->
         <div class="player_cards">
-            <div class="card card1"></div>
-            <div class="card card2"></div>
-            <div class="card card2"></div>
-            <div class="card card2"></div>
-            <div class="card card2"></div>
+            <div class="card card1" onclick="Open_Info_Card()"></div>
+            <div class="card card2" onclick="Open_Info_Card()"></div>
+            <div class="card card2" onclick="Open_Info_Card()"></div>
         </div>
 
         <!-- блок c с действиями игрока -->
         <div class="player_action">
-            Action_batton 
-            <!-- <form class="action_button_1">
-                <button type="button"><p>Завершить ход</p></button>
+            <form>
+                <button type="button">Завершить ход</button>
             </form>
             <form>
-                <button type="button" class="action_button_2"><p>Временно забрать ход</p></button>
-            </form> -->
+                <button type="button">Временно забрать ход</button>
+            </form>
         </div>
-
     </div>
-        
-    </script>
+
+    <!-- всплывающее окно с информацией о карте, при нажатии на карту -->
+    <div class="card_window">
+        <div class="card"></div>
+        <div class="card_window_buttons">
+            <!-- первый ряд кнопок -->
+           <div class="line_buttons">
+               <form>
+                   <button type="button">Применить</button>
+               </form>
+               <form>
+                    <button type="button">Вызвать</button>
+                </form>
+           </div>
+           <!-- второй ряд кнопок -->
+           <div class="line_buttons">
+                 <form>
+                     <button type="button">Надеть</button>
+                 </form>
+                <form>
+                    <button type="button">В инвентарь</button>
+                </form>
+            </div>
+            <!-- третий ряд кнопок -->
+            <div class="line_buttons">
+                <form>
+                    <button type="button">Продать</button>
+                </form>
+                <form>
+                     <button type="button">Украсть</button>
+                 </form>
+            </div>
+            <!-- четвертый ряд кнопок -->
+            <div class="line_buttons">
+                <form>
+                    <button type="button">Сбросить</button>
+                </form>
+                <form>
+                     <button type="button">Взять в руку</button>
+                 </form>
+            </div>
+
+            <!-- кнопка закрытия -->
+            <div class="div_exit_button">
+                <form>
+                    <button type="button" onclick="Open_Info_Card()">Закрыть</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->>
+    <div class="window_player_special_card">
+        <p class="special_card_name">Надетые шмотки игрока Nick_Name</p>
+        <div class="line"></div>
+        <div class="div_special_card"></div>
+        <div class="line"></div>
+        <form>
+            <button type="button" onclick="Open_Special_Card()">Закрыть</button>
+        </form>
+    </div>
+
+    <!-- Всплывающее окно подтверждения победы над монстром   -->
+    <div class="window_success">
+        <p class="">Nick_Name желает победы над монстром</p>
+        <p class="">Вы согласны?</p>
+        <div class="success_button">
+            <form>
+                <button type="button" class="Yes">Да</button>
+            </form>
+            <form>
+                <button type="button" class="No">Нет</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
