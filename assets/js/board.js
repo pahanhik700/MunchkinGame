@@ -33,7 +33,7 @@ var id_card = 0;
 var add_card_in_hand = function () {
 
     //переменная, хранящая указатель на руку
-    let hend = document.getElementById("Hend");
+    var hend = document.getElementById("Hend");
 
     //переменная с картой
     let card = document.createElement("div");
@@ -96,6 +96,13 @@ var add_card_in_hand = function () {
 }
 
 //функция выбрасывания карты
-var drop_card_out_henad = function () {
+var drop_card_out_hend = function () {
 
+}
+//функция взятия карты из колоды дверей
+var take_deckcard = function () {
+  let deckcard = document.getElementById("treasure_from_deck");
+  let hand = document.getElementById("Hend");
+  let clone = deckcard.cloneNode();
+  hand.append(clone);
 }
