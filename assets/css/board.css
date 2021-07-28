@@ -238,10 +238,11 @@ body{
 }
 
 .card {
-    background-color: crimson;
+    background-color: #DEB887;
     width: 12%;
     height: 70%;
     margin-bottom: 2%;
+    border-radius: 3%;
     border-style: double;
     border-color: black;
 }
@@ -372,7 +373,7 @@ body{
 }
 
 .line {
-    border-bottom: 2px solid #f00;
+    border-bottom: 2px solid 	#8B4513;
 }
 
 .div_special_card {
@@ -416,7 +417,7 @@ body{
     display: flex;
     border-radius: 3%;
     border-style: groove;
-    border-color:rgb(192, 50, 7);
+    border-color:	#8B4513;
     overflow: hidden;
 }
 
@@ -427,7 +428,7 @@ body{
 
 .line_fight {
     height: 100%;
-    background-color: crimson;
+    background-color: #8B4513;
     border-left: 2px solid rgb(192, 50, 7);
 }
 
