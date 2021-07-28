@@ -11,68 +11,6 @@
 </head>
 <body>
 
-    <!-- окно боя -->
-    <div class="fight_window">
-        <div class="monster_cards">
-            <!-- монстр -->
-            <div class="div_avatar">
-                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
-                <div class="Nick_name">
-                    Монстр
-                </div>
-            </div>
-            <div class="line"></div>
-
-            <!-- Окно с картами монстра -->
-            <div class="cards_fight">
-                    <div class="card" onclick="Open_Info_Card()"></div>
-                    <div class="card" onclick="Open_Info_Card()"></div>
-                    <div class="card" onclick="Open_Info_Card()"></div>
-                    <div class="card" onclick="Open_Info_Card()"></div>
-            </div>
-        </div>
-        <div class="line_fight"></div>
-
-        <div class="fight_buttons">
-            <p>20 vs 20</p>
-            <form>
-                <button type="button" class="first_button">Позвать на помощь</button>
-            </form>
-            <form>
-                <button type="button">Голосовать за победу</button>
-            </form>
-            <form>
-                <button type="button">Смыться</button>
-            </form>
-            <form>
-                <button type="button">Не драться</button>
-            </form>
-        </div>
-
-        <div class="line_fight"></div>
-
-        <div class="player_fight">
-            <!-- блок с аватаром игрока и его ником -->
-            <div class="div_avatar">
-                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
-                <div class="form_avatar">
-                    <img class="avatar" src="assets/media/avatar/манчкин.PNG">
-                </div>
-                <div class="Nick_name">
-                    Nick_name
-                </div>
-            </div>
-            <div class="line"></div>
-
-            <div class="cards_fight">
-                <div class="card" onclick="Open_Info_Card()"></div>
-                <div class="card" onclick="Open_Info_Card()"></div>
-                <div class="card" onclick="Open_Info_Card()"></div>
-                <div class="card" onclick="Open_Info_Card()"></div>
-        </div>
-        </div>
-    </div>
-
     <!-- блок с соперниками -->
     <div class="div_opponents">
         <!-- блок с информацией об игроке -->
@@ -174,6 +112,68 @@
         </div>
     </div>
 
+    <!-- окно боя -->
+    <div class="fight_window">
+        <div class="monster_cards">
+            <!-- монстр -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="Nick_name">
+                    Монстр
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <!-- Окно с картами монстра -->
+            <div class="cards_fight">
+                    <div class="card" onclick="Open_Info_Card()"></div>
+                    <div class="card" onclick="Open_Info_Card()"></div>
+                    <div class="card" onclick="Open_Info_Card()"></div>
+                    <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+        </div>
+        <div class="line_fight"></div>
+
+        <div class="fight_buttons">
+            <p>20 vs 20</p>
+            <form>
+                <button type="button" class="first_button">Позвать на помощь</button>
+            </form>
+            <form>
+                <button type="button">Голосовать за победу</button>
+            </form>
+            <form>
+                <button type="button">Смыться</button>
+            </form>
+            <form>
+                <button type="button">Не драться</button>
+            </form>
+        </div>
+
+        <div class="line_fight"></div>
+
+        <div class="player_fight">
+            <!-- блок с аватаром игрока и его ником -->
+            <div class="div_avatar">
+                <img class="background_div_avatar" src="assets/media/мульт_форма.jpg">
+                <div class="form_avatar">
+                    <img class="avatar" src="assets/media/avatar/манчкин.PNG">
+                </div>
+                <div class="Nick_name">
+                    Nick_name
+                </div>
+            </div>
+            <div class="line"></div>
+
+            <div class="cards_fight">
+                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" onclick="Open_Info_Card()"></div>
+        </div>
+        </div>
+    </div>
+
 
     <!-- блок с картами сокровищ дверей и с картами, скинутыми игроками-->
     <div class="game_cards">
@@ -181,7 +181,7 @@
         <!-- бок с картами сокровищ и дверей -->
         <div class="div_doors_treasures">
             <div class="card"><img src ="assets/media/phonk.jpg"></div>
-            <div class="card"></div>
+            <div class="card"><img src ="assets/media/phonk.jpg"></div>
         </div>
 
         <!-- бок с картами, скинутыми игроками -->
@@ -246,10 +246,8 @@
         </div>
 
         <!-- блок с картами игрока -->
-        <div class="player_cards">
-            <div class="card card1" onclick="Open_Info_Card()"></div>
-            <div class="card card2" onclick="Open_Info_Card()"></div>
-            <div class="card card2" onclick="Open_Info_Card()"></div>
+        <div class="player_cards" id="Hend">
+            <!-- <div class="card card_in_hend" id="hand_card_0" onclick="Open_Info_Card()"></div> -->
         </div>
 
         <!-- блок c с действиями игрока -->
@@ -263,8 +261,21 @@
         </div>
     </div>
 
-    <!-- всплывающее окно с информацией о карте, при нажатии на карту -->
-    <div class="card_window">
+    <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->>
+    <div class="window_player_special_card">
+        <p class="special_card_name">Надетые шмотки игрока Nick_Name</p>
+        <div class="line"></div>
+        <div class="div_special_card">
+            <div class="card" onclick="Open_Info_Card()"></div>
+        </div>
+        <div class="line"></div>
+        <form>
+            <button type="button" onclick="Open_Special_Card()">Закрыть</button>
+        </form>
+    </div>
+
+     <!-- всплывающее окно с информацией о карте, при нажатии на карту -->
+     <div class="card_window">
         <div class="card"></div>
         <div class="card_window_buttons">
             <!-- первый ряд кнопок -->
@@ -311,17 +322,6 @@
                 </form>
             </div>
         </div>
-    </div>
-
-    <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->>
-    <div class="window_player_special_card">
-        <p class="special_card_name">Надетые шмотки игрока Nick_Name</p>
-        <div class="line"></div>
-        <div class="div_special_card"></div>
-        <div class="line"></div>
-        <form>
-            <button type="button" onclick="Open_Special_Card()">Закрыть</button>
-        </form>
     </div>
 
     <!-- Всплывающее окно подтверждения победы над монстром   -->
