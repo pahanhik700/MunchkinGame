@@ -103,6 +103,6 @@ var drop_card_out_hend = function () {
 var take_deckcard = function () {
   let deckcard = document.getElementById("treasure_from_deck");
   let hand = document.getElementById("Hend");
-  let clone = deckcard.cloneNode();
+  let clone = deckcard.cloneNode(true);
   hand.append(clone);
 }
