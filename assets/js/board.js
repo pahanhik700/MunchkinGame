@@ -99,10 +99,3 @@ var add_card_in_hand = function () {
 var drop_card_out_hend = function () {
 
 }
-//функция взятия карты из колоды дверей
-var take_deckcard = function () {
-  let deckcard = document.getElementById("treasure_from_deck");
-  let hand = document.getElementById("Hend");
-  let clone = deckcard.cloneNode(true);
-  hand.append(clone);
-}
