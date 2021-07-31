@@ -224,11 +224,11 @@ doors.onclick = function (){
     else if(tmp.constructor.name === "Class"){
         card.id = "clas";
     }
-    
+
     for (let k in tmp){
         card.innerHTML += tmp[k] + '<br>';
     }
-    
+
 }
 
 treasure.onclick = function() {
@@ -254,7 +254,7 @@ var add_card_in_hand = function () {
     //переменная с картой
     card = document.createElement("div");
     card.className = "card card_in_hend";
-    
+
     card.onclick = Open_Info_Card;
     hend.append(card);
 }
@@ -327,18 +327,18 @@ MoneyChange() {
     document.getElementById("Money").innerHTML = "Голда: " + (this.money);
 }
 NameChange() {
-    document.getElementById("NickName").innerHTML = (this.name);
+    document.getElementById("Nickname").innerHTML = this.name;
 }
-ClassChange() {
+ClassAdd(NewClass) {
 
 }
-ItemsChange() {
+ItemsAdd() {
 
 }
-InventoryChange() {
+InventoryAdd() {
 
 }
-CursesChange() {
+CursesAdd() {
 
 }
 }
@@ -407,7 +407,7 @@ class Person {
     }
 }
 
-
+// заполнения колод картами и из массивов и добавление к ним картинок
 var dungeon = [];
 var treasures = [];
 
@@ -464,3 +464,13 @@ dungeon.sort(compareRandom);
 }
 Deck();
 console.log(dungeon);
+console.log(treasures);
+
+//тестовый игрок
+var FPlayer = new Player("Pavel", 1, 1, 0, "human");
+FPlayer.NameChange();
+FPlayer.LevelChange();
+FPlayer.PowerChange();
+FPlayer.MoneyChange();
+
+//использование карт из инвентаря

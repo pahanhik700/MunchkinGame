@@ -596,7 +596,7 @@ body{
     margin: 11.5% 26%;
     position: absolute;
     background-image: url(../media/мульт_форма.jpg);
-    display: flex;
+    display: none;
     border-radius: 3%;
     border-style: groove;
     border-color:	#8B4513;
