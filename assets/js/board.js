@@ -204,36 +204,56 @@ var Open_Special_Curse_Card = function() {
 
 
 var card;
+
+var doors = document.getElementById("doors");
+var treasure = document.getElementById("treasures");
+
+doors.onclick = function (){
+    let tmp = dungeon[dungeon.length - 1];
+    dungeon.pop();
+    if (tmp.constructor.name === "Enemy"){
+        card.id = "enemy";
+    }
+    else if(tmp.constructor.name === "Curse"){
+        card.id = "curse";
+    }
+    else if(tmp.constructor.name === "Race"){
+        card.id = "race";
+    }
+    else if(tmp.constructor.name === "Class"){
+        card.id = "clas";
+    }
+    
+    for (let k in tmp){
+        card.innerHTML += tmp[k] + '<br>';
+    }
+    
+}
+
+treasure.onclick = function() {
+    let tmp = treasures[treasures.length - 1];
+    treasures.pop();
+    if (tmp.constructor.name === "Spells"){
+        card.id = "spell";
+    }
+    else if(tmp.constructor.name === "Items"){
+        card.id = "item";
+    }
+    for (let k in tmp){
+        card.innerHTML += tmp[k] + '<br>';
+    }
+}
+
 //функция добавления карт в руку
 var add_card_in_hand = function () {
 
     //переменная, хранящая указатель на руку
     let hend = document.getElementById("Hend");
-    let doors = document.getElementById("doors");
-    let treasure = document.getElementById("treasures");
 
     //переменная с картой
     card = document.createElement("div");
     card.className = "card card_in_hend";
     
-    doors.onclick = function (){
-        let tmp = dungeon[dungeon.length - 1];
-        dungeon.pop();
-        card.id = "dung";
-        for (let k in tmp){
-            card.innerHTML += tmp[k] + '<br>';
-        }
-    }
-
-    treasure.onclick = function() {
-        let tmp = treasures[treasures.length - 1];
-        treasures.pop();
-        card.id = "treas";
-        for (let k in tmp){
-            card.innerHTML += tmp[k] + '<br>';
-        }
-    }
-
     card.onclick = Open_Info_Card;
     hend.append(card);
 }
@@ -244,15 +264,45 @@ var drops_cards = [];
 var drop_card_out_hand = function () {
     let drop = document.getElementById('drop_doors');
     let treas = document.getElementById("drop_treasures");
-    if (card_in_h.id === "dung")
+    if (card_in_h.id === "enemy" || card_in_h.id === "curse" || card_in_h.id === "clas" || card_in_h.id === "race")
         drop.innerHTML = card_in_h.innerHTML;
-    else if (card_in_h.id === "treas")
+    else if (card_in_h.id === "item" || card_in_h.id === "spell")
         treas.innerHTML = card_in_h.innerHTML;
     drops_cards.push(card_in_h)
     card_in_h.remove();
-    console.log(card_in_h);
 }
 
+var clothes = function() {
+    if (card_in_h.id === "item"){
+        let it = document.getElementById("item_card");
+        it.innerHTML = card_in_h.innerHTML;
+        card_in_h.remove();
+    }
+}
+
+var race = function() {
+    if (card_in_h.id === "race"){
+        let it = document.getElementById("race_card");
+        it.innerHTML = card_in_h.innerHTML;
+        card_in_h.remove();
+    }
+}
+
+var class_player = function() {
+    if (card_in_h.id === "clas"){
+        let it = document.getElementById("class_card");
+        it.innerHTML = card_in_h.innerHTML;
+        card_in_h.remove();
+    }
+}
+
+var curse = function() {
+    if (card_in_h.id === "curse"){
+        let it = document.getElementById("curse_card");
+        it.innerHTML = card_in_h.innerHTML;
+        card_in_h.remove();
+    }
+}
 
 class Player {
 constructor(name, level, power, money, race, clas, items, inventory, curses) {
@@ -293,9 +343,10 @@ CursesChange() {
 }
 
 class Enemy {
-    constructor(level, name, buff, obscenity, level_person, treacyres){
+    constructor(level, name, img, buff, obscenity, level_person, treacyres){
         this.level = level;
         this.name = name;
+        this.img = img;
         this.buff = buff;
         this.obscenity = obscenity;
         this.level_person = level_person;
@@ -304,40 +355,45 @@ class Enemy {
 }
 
 class Race {
-    constructor(name, buff, description){
+    constructor(name, img, buff, description){
         this.name = name;
+        this.img = img;
         this.buff = buff;
         this.description = description;
     }
 }
 
 class Class {
-    constructor(name, ability1, ability2){
+    constructor(name, img, ability1, ability2){
         this.name = name;
+        this.img = img;
         this.ability1 = ability1;
         this.ability2 = ability2;
     }
 }
 
 class Curse {
-    constructor(name, description){
+    constructor(name, img, description){
         this.name = name;
+        this.img = img;
         this.description = description;
     }
 }
 
 class Spell {
-    constructor(name, buff, description){
+    constructor(name, img, buff, description){
         this.name = name;
+        this.img = img;
         this.buff = buff;
         this.description = description;
     }
 }
 
 class Items {
-    constructor(bonus, person, description, money){
+    constructor(bonus, person, img, description, money){
         this.bonus = bonus;
         this.person = person;
+        this.img = img;
         this.description = description;
         this.money = money;
     }
@@ -360,37 +416,50 @@ function compareRandom(a, b) {
 
 function Deck(){
 for (let i = 0; i < monsters.length; i++){
-    let tmp = new Enemy(monsters[i][0], monsters[i][1], monsters[i][2], monsters[i][3], monsters[i][4], monsters[i][5]);
+    let tmp = new Enemy(monsters[i][0], monsters[i][1], '<img id="img_1" src="assets/media/monster.png">', monsters[i][2], monsters[i][3], monsters[i][4], monsters[i][5]);
     dungeon.push(tmp);
 }
 
 for (let i = 0; i < spells.length; i++){
-    let tmp = new Spell(spells[i][0], spells[i][1], spells[i][2]);
-    if (tmp.description === "Нет цены")
-        dungeon.push(tmp);
-    else
-        treasures.push(tmp);
+    let tmp = new Spell(spells[i][0], '<img id="img_1" src="assets/media/spell.jpg">', spells[i][1], spells[i][2]);
+    treasures.push(tmp);
 }
 
-for (let i = 0; i < races; i++){
-    let tmp = new Race(races[i][0], races[i][1], races[i][2]);
+for (let i = 0; i < races.length; i++){
+    let tmp;
+    if (races[i][0] === "Хафлинг")
+        tmp = new Race(races[i][0], '<img id="img_1" src="assets/media/Hafl.png">', races[i][1], races[i][2]);
+    else if (races[i][0] === "Дварф")
+        tmp = new Race(races[i][0], '<img id="img_1" src="assets/media/Dwarf.png">', races[i][1], races[i][2]);
+    else{
+        tmp = new Race(races[i][0], '<img id="img_1" src="assets/media/Elph.png">', races[i][1], races[i][2]);
+    }
     dungeon.push(tmp);
 }
 
 for (let i = 0; i < curses.length; i++){
-    let tmp = new Curse(curses[i][0], curses[i][1]);
+    let tmp = new Curse(curses[i][0], '<img id="img_1" src="assets/media/curse.png">', curses[i][1]);
     dungeon.push(tmp);
 }
 
 for (let i = 0; i < classes.length; i++){
-    let tmp = new Class(classes[i][0], classes[i][1], classes[i][2]);
+    let tmp;
+    if (classes[i][0] === "Воин")
+        tmp = new Class(classes[i][0], '<img id="img_1" src="assets/media/Warrior.jpg">', classes[i][1], classes[i][2]);
+    else if (classes[i][0] === "Волшебник")
+        tmp = new Class(classes[i][0], '<img id="img_1" src="assets/media/Wizard.png">', classes[i][1], classes[i][2]);
+    else if (classes[i][0] === "Клирик")
+        tmp = new Class(classes[i][0], '<img id="img_1" src="assets/media/Cleric.png">', classes[i][1], classes[i][2]);
+    else if (classes[i][0] === "Вор")
+        tmp = new Class(classes[i][0], '<img id="img_1" src="assets/media/Theif.png">', classes[i][1], classes[i][2]);
     dungeon.push(tmp);
 }
 for (let i = 0; i < items.length; i++){
-    let tmp = new Items(items[i][0], items[i][1], items[i][2], items[i][3]);
+    let tmp = new Items(items[i][0], items[i][1], '<img id="img_1" src="assets/media/items.png">', items[i][2], items[i][3]);
     treasures.push(tmp);
 }
 treasures.sort(compareRandom);
 dungeon.sort(compareRandom);
 }
 Deck();
+console.log(dungeon);
