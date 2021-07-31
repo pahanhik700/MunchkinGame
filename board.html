@@ -39,23 +39,23 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Расса</button>
+                        <button type="button" onclick="Open_Special_Race_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Класс</button>
+                        <button type="button" onclick="Open_Special_Class_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Clothes_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Inventory_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Curse_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
@@ -88,23 +88,23 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Расса</button>
+                        <button type="button" onclick="Open_Special_Race_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Класс</button>
+                        <button type="button" onclick="Open_Special_Class_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Clothes_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Inventory_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Curse_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
@@ -222,23 +222,23 @@
                 <!-- верхние 3 кнопки -->
                 <div class="buttons_up">
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Расса</button>
+                        <button type="button" onclick="Open_Special_Race_Card()">Расса</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Класс</button>
+                        <button type="button" onclick="Open_Special_Class_Card()">Класс</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Шмотки</button>
+                        <button type="button" onclick="Open_Special_Clothes_Card()">Шмотки</button>
                     </form>
                 </div>
 
                 <!-- нижние 2 кнопки -->
                 <div class="buttons_down">
                     <form >
-                        <button type="button" onclick="Open_Special_Card()">Инвентарь</button>
+                        <button type="button" onclick="Open_Special_Inventory_Card()">Инвентарь</button>
                     </form>
                     <form>
-                        <button type="button" onclick="Open_Special_Card()">Проклятия</button>
+                        <button type="button" onclick="Open_Special_Curse_Card()">Проклятия</button>
                     </form>
                 </div>
             </div>
@@ -262,18 +262,68 @@
     </div>
 
     <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->>
-    <div class="window_player_special_card">
-        <p class="special_card_name">Надетые шмотки игрока Nick_Name</p>
-        <div class="line"></div>
-        <div class="div_special_card">
-            <div class="card" onclick="Open_Info_Card()"></div>
+    <div id="oll_window_special_card">    
+        <div class="window_player_race_card">
+            <p class="special_card_name">Карты рассы игрока Nick_Name</p>
+            <div class="line"></div>
+            <div class="div_special_card" id="player_race_card">
+                <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+            <div class="line"></div>
+            <form>
+                <button type="button" onclick="Open_Special_Race_Card()">Закрыть</button>
+            </form>
         </div>
-        <div class="line"></div>
-        <form>
-            <button type="button" onclick="Open_Special_Card()">Закрыть</button>
-        </form>
-    </div>
 
+        <div class="window_player_class_card">
+            <p class="special_card_name">Карты класса игрока Nick_Name</p>
+            <div class="line"></div>
+            <div class="div_special_card" id="player_class_card">
+                <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+            <div class="line"></div>
+            <form>
+                <button type="button" onclick="Open_Special_Class_Card()">Закрыть</button>
+            </form>
+        </div>
+
+        <div class="window_player_clothes_card">
+            <p class="special_card_name">Шмотки игрока Nick_Name</p>
+            <div class="line"></div>
+            <div class="div_special_card" id="player_clothes_card">
+                <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+            <div class="line"></div>
+            <form>
+                <button type="button" onclick="Open_Special_Clothes_Card()">Закрыть</button>
+            </form>
+        </div>
+
+        <div class="window_player_inventory_card">
+            <p class="special_card_name">Инвентарь игрока Nick_Name</p>
+            <div class="line"></div>
+            <div class="div_special_card" id="player_inventory_card">
+                <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+            <div class="line"></div>
+            <form>
+                <button type="button" onclick="Open_Special_Inventory_Card()">Закрыть</button>
+            </form>
+        </div>
+
+        <div class="window_player_curse_card">
+            <p class="special_card_name">Проклятия игрока Nick_Name</p>
+            <div class="line"></div>
+            <div class="div_special_card" id="player_curse_card">
+                <div class="card" onclick="Open_Info_Card()"></div>
+            </div>
+            <div class="line"></div>
+            <form>
+                <button type="button" onclick="Open_Special_Curse_Card()">Закрыть</button>
+            </form>
+        </div>
+        
+    </div>
      <!-- всплывающее окно с информацией о карте, при нажатии на карту -->
      <div class="card_window">
         <div class="card"></div>

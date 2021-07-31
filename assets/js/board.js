@@ -138,10 +138,11 @@ var Open_Info_Card = function() {
     }
 }
 
-//функция закрытия и открытия окна со специальными картами
+
+//функции закрытия и открытия окна со специальными картами
 var open_close_special_card = 0;
-var Open_Special_Card = function() {
-    let Window_Special_Card = document.querySelector(".window_player_special_card");
+var Open_Special_Race_Card = function() {
+    let Window_Special_Card = document.querySelector(".window_player_race_card");
     if(open_close_special_card == 0) {
         Window_Special_Card.style.display = "block";
         open_close_special_card = 1;
@@ -151,6 +152,56 @@ var Open_Special_Card = function() {
         open_close_special_card = 0;
     }
 }
+
+var Open_Special_Class_Card = function() {
+    let Window_Special_Card = document.querySelector(".window_player_class_card");
+    if(open_close_special_card == 0) {
+        Window_Special_Card.style.display = "block";
+        open_close_special_card = 1;
+    }
+    else {
+        Window_Special_Card.style.display = "none";
+        open_close_special_card = 0;
+    }
+}
+
+var Open_Special_Clothes_Card = function() {
+    let Window_Special_Card = document.querySelector(".window_player_clothes_card");
+    if(open_close_special_card == 0) {
+        Window_Special_Card.style.display = "block";
+        open_close_special_card = 1;
+    }
+    else {
+        Window_Special_Card.style.display = "none";
+        open_close_special_card = 0;
+    }
+}
+
+var Open_Special_Inventory_Card = function() {
+    let Window_Special_Card = document.querySelector(".window_player_inventory_card");
+    if(open_close_special_card == 0) {
+        Window_Special_Card.style.display = "block";
+        open_close_special_card = 1;
+    }
+    else {
+        Window_Special_Card.style.display = "none";
+        open_close_special_card = 0;
+    }
+}
+
+var Open_Special_Curse_Card = function() {
+    let Window_Special_Card = document.querySelector(".window_player_curse_card");
+    if(open_close_special_card == 0) {
+        Window_Special_Card.style.display = "block";
+        open_close_special_card = 1;
+    }
+    else {
+        Window_Special_Card.style.display = "none";
+        open_close_special_card = 0;
+    }
+}
+
+
 
 var id_card = 0;
 //функция добавления карт в руку
