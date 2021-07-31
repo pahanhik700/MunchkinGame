@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="assets/css/board.css" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="assets/js/board.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script defer src="assets/js/board.js"></script>
     <title>Document</title>
 </head>
 <body>
-
     <!-- блок с соперниками -->
     <div class="div_opponents">
         <!-- блок с информацией об игроке -->
@@ -112,6 +109,7 @@
         </div>
     </div>
 
+    
     <!-- окно боя -->
     <div class="fight_window">
         <div class="monster_cards">
@@ -175,19 +173,20 @@
     </div>
 
 
+
     <!-- блок с картами сокровищ дверей и с картами, скинутыми игроками-->
     <div class="game_cards">
 
         <!-- бок с картами сокровищ и дверей -->
-        <div class="div_doors">
-            <div class="card" id = "treasure_from_deck"><img src ="assets/media/phonk.jpg"></div>
-            <div class="card"><img src ="assets/media/phonk.jpg"></div>
+        <div class="div_doors_treasures" id="doors_treasures">
+            <div class="card" id="treasure_from_deck" onclick="add_card_in_hand()"><img id="doors" src ="assets/media/phonk.jpg"></div>
+            <div class="card" onclick="add_card_in_hand()"><img id="treasures" src ="assets/media/phonk.jpg"></div>
         </div>
 
         <!-- бок с картами, скинутыми игроками -->
         <div class="div_drop_cards">
-            <div class="card"></div>
-            <div class="card"></div>
+            <div class="card" id="drop_doors"></div>
+            <div class="card" id="drop_treasures"></div>
         </div>
 
     </div>
@@ -247,16 +246,12 @@
 
         <!-- блок с картами игрока -->
         <div class="player_cards" id="Hend">
-            <!-- <div class="card card_in_hend" id="hand_card_0" onclick="Open_Info_Card()"></div> -->
         </div>
 
         <!-- блок c с действиями игрока -->
         <div class="player_action">
             <form>
                 <button type="button">Завершить ход</button>
-            </form>
-            <form>
-                <button type="button">Временно забрать ход</button>
             </form>
         </div>
     </div>
@@ -324,9 +319,9 @@
         </div>
         
     </div>
+
      <!-- всплывающее окно с информацией о карте, при нажатии на карту -->
-     <div class="card_window">
-        <div class="card"></div>
+     <div class="card_window" id="window_card">
         <div class="card_window_buttons">
             <!-- первый ряд кнопок -->
            <div class="line_buttons">
@@ -358,7 +353,7 @@
             <!-- четвертый ряд кнопок -->
             <div class="line_buttons">
                 <form>
-                    <button type="button">Сбросить</button>
+                    <button type="button" onclick="drop_card_out_hand()">Сбросить</button>
                 </form>
                 <form>
                      <button type="button">Взять в руку</button>
@@ -387,5 +382,6 @@
             </form>
         </div>
     </div>
-</body>
+
+    </body>
 </html>
