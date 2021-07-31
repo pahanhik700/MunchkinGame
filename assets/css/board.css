@@ -292,6 +292,31 @@ body{
     text-align: center;
     font-size: 10px;
 }
+
+#race_card{
+    text-align: center;
+    font-size: 10px;
+}
+
+#class_card{
+    text-align: center;
+    font-size: 10px;
+}
+
+#item_card{
+    text-align: center;
+    font-size: 10px;
+}
+
+#curse_card{
+    text-align: center;
+    font-size: 10px;
+}
+
+#img_1{
+    max-width: 30%;
+    max-height: 45%;
+}
 /* ............................................................ */
 
 /* <!-- всплывающее окно, при нажатии на карту -->............. */
