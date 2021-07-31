@@ -204,12 +204,14 @@ var Open_Special_Curse_Card = function() {
 }
 
 
-var card;
-
 var doors = document.getElementById("doors");
 var treasure = document.getElementById("treasures");
 
 doors.onclick = function (){
+    var card = document.createElement("div");
+    card.className = "card card_in_hend";
+    card.onclick = Open_Info_Card;
+    let hend = document.getElementById("Hend");
     let tmp = dungeon[dungeon.length - 1];
     dungeon.pop();
     if (tmp.constructor.name === "Enemy"){
@@ -228,10 +230,14 @@ doors.onclick = function (){
     for (let k in tmp){
         card.innerHTML += tmp[k] + '<br>';
     }
-
+    hend.appendChild(card);
 }
 
 treasure.onclick = function() {
+    var card = document.createElement("div");
+    card.className = "card card_in_hend";
+    card.onclick = Open_Info_Card;
+    let hend = document.getElementById("Hend");
     let tmp = treasures[treasures.length - 1];
     treasures.pop();
     if (tmp.constructor.name === "Spells"){
@@ -243,21 +249,9 @@ treasure.onclick = function() {
     for (let k in tmp){
         card.innerHTML += tmp[k] + '<br>';
     }
-}
-
-//функция добавления карт в руку
-var add_card_in_hand = function () {
-
-    //переменная, хранящая указатель на руку
-    let hend = document.getElementById("Hend");
-
-    //переменная с картой
-    card = document.createElement("div");
-    card.className = "card card_in_hend";
-
-    card.onclick = Open_Info_Card;
     hend.append(card);
 }
+
 
 
 var drops_cards = [];
