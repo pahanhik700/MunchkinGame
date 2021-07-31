@@ -67,7 +67,7 @@ body{
     flex-direction: row;
 }
 
-.div_doors {
+.div_doors_treasures {
     width: 30%;
     height: 50%;
 }
@@ -79,7 +79,7 @@ body{
 }
 
 
-.card img {
+.div_doors_treasures img {
   max-width: 100%;
   max-height: 100%;
   min-width: 100%;
@@ -248,7 +248,14 @@ body{
 }
 
 .card_in_hend {
+    text-align: center;
+    font-size: 10px;
     margin-left: -25px;
+}
+
+.card_in_hend img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .card:hover {
@@ -275,6 +282,16 @@ body{
     font-size: 90%;
     background-image: url(../media/Табличка.PNG);
 }
+
+#drop_doors {
+    text-align: center;
+    font-size: 10px;
+}
+
+#drop_treasures{
+    text-align: center;
+    font-size: 10px;
+}
 /* ............................................................ */
 
 /* <!-- всплывающее окно, при нажатии на карту -->............. */
@@ -292,6 +309,7 @@ body{
 }
 
 .card_window .card {
+    text-align: center;
     margin: 5% auto;
     width: 80%;
     height: 60%;
@@ -352,7 +370,6 @@ body{
 /* ............................................................ */
 
 /* <!--Всплывающее окно с картами игрока, при нажатии на кнопку просмотра специальных карт-->> */
-/* расса */
 .window_player_race_card {
     width: 50%;
     height: 65%;
@@ -370,7 +387,6 @@ body{
 .window_player_race_card .card{
     width: 15%;
     height: 45%;
-
 }
 
 .window_player_race_card form{
@@ -386,9 +402,6 @@ body{
     height: 100%;
     background-image: url(../media/Табличка.PNG);
 }
-
-
-
 
 .window_player_class_card {
     width: 50%;
@@ -424,10 +437,6 @@ body{
     background-image: url(../media/Табличка.PNG);
 }
 
-
-
-
-
 .window_player_clothes_card {
     width: 50%;
     height: 65%;
@@ -461,9 +470,6 @@ body{
     height: 100%;
     background-image: url(../media/Табличка.PNG);
 }
-
-
-
 
 .window_player_inventory_card {
     width: 50%;
@@ -536,12 +542,8 @@ body{
     background-image: url(../media/Табличка.PNG);
 }
 
-
-
-
-
 .special_card_name {
-    margin-left: 28%;
+    text-align: center;
     color:#e9dcd2;
     font-size: 20px;
 }
@@ -558,7 +560,6 @@ body{
     align-items: center;
     flex-wrap:wrap;
 }
-
 
 
 /* .............................................................................................*/
