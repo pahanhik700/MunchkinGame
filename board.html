@@ -262,7 +262,7 @@
             <p class="special_card_name">Карты рассы игрока Nick_Name</p>
             <div class="line"></div>
             <div class="div_special_card" id="player_race_card">
-                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" id="race_card" onclick="Open_Info_Card()">Человек<br><img id="img_1" src="assets/media/People.png"></div>
             </div>
             <div class="line"></div>
             <form>
@@ -274,7 +274,7 @@
             <p class="special_card_name">Карты класса игрока Nick_Name</p>
             <div class="line"></div>
             <div class="div_special_card" id="player_class_card">
-                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" id="class_card" onclick="Open_Info_Card()"></div>
             </div>
             <div class="line"></div>
             <form>
@@ -286,7 +286,7 @@
             <p class="special_card_name">Шмотки игрока Nick_Name</p>
             <div class="line"></div>
             <div class="div_special_card" id="player_clothes_card">
-                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" id="item_card" onclick="Open_Info_Card()"></div>
             </div>
             <div class="line"></div>
             <form>
@@ -310,7 +310,7 @@
             <p class="special_card_name">Проклятия игрока Nick_Name</p>
             <div class="line"></div>
             <div class="div_special_card" id="player_curse_card">
-                <div class="card" onclick="Open_Info_Card()"></div>
+                <div class="card" id="curse_card" onclick="Open_Info_Card()"></div>
             </div>
             <div class="line"></div>
             <form>
@@ -326,7 +326,7 @@
             <!-- первый ряд кнопок -->
            <div class="line_buttons">
                <form>
-                   <button type="button">Применить</button>
+                   <button type="button" onclick="race(); class_player()">Применить</button>
                </form>
                <form>
                     <button type="button">Вызвать</button>
@@ -335,7 +335,7 @@
            <!-- второй ряд кнопок -->
            <div class="line_buttons">
                  <form>
-                     <button type="button">Надеть</button>
+                     <button type="button" onclick="clothes()">Надеть</button>
                  </form>
                 <form>
                     <button type="button">В инвентарь</button>
