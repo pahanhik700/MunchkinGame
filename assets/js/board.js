@@ -1,6 +1,6 @@
 var classes = [["Вор", "Подрезка: можешь скинуть карту, чтобы подрезать д…вместно валят монстра, можешь подрезать их обоих.", "Кража: можешь скинуть  карту, что бы попытаться с… кража, иначе тебя лупят, и ты теряешь 1 Уровень."],
 ["Волшебник", "Заклинание Полета: можешь сбросить до 3 карт в процесс Смывки; каждая дает +1 Бонус на бегство.", "Заклинание Усмирения: сбросишь всю \"руку\" - усмир…частвуют другие монстры, с ними придётся воевать."],
-["Клирик", "Изгнанеие: можешь сбросить до 3 карт в бою против Андедов. Каждый сброс дает тебе +3 бонус."],
+["Клирик", "Изгнанеие: можешь сбросить до 3 карт в бою против Андедов.", "Каждый сброс дает тебе +3 бонус."],
 ["Воин", "Буйство: можешь сбросить до 3 карт в бою, каждая сброшенная карта даст тебе +1 Бонус.", "При ничьей в бою ты побеждаешь."]];
 var curses = [["Уровень!", "Потеря 1 Уровня!"],
 ["Кривящее зеркало", "В следующем бою ты не получаешь бонусы от оружия.…ь Снятия проклятия до следующего боя, оно спадет."],
@@ -113,33 +113,34 @@ var monsters = [["уровень 2", "Бешеная Цыпа", "+3 против
 
 //функция закрытия и открытия информации о карте
 var open_close_info_card = 0;
+var card_in_h;
 var Open_Info_Card = function() {
     let Window_info_card = document.querySelector(".card_window");
 
     if(open_close_info_card == 0) {
         Window_info_card.style.display = "block";
         open_close_info_card = 1;
-        let search = document.getElementById('123');
+        let search = document.getElementById('window_card');
         let first = search.firstChild;
         let new_el = document.createElement('div');
         new_el.className = "card";
         let hand = document.getElementById('Hend');
         hand.addEventListener('click', function(e){
             new_el.innerHTML = e.target.innerHTML;
+            card_in_h = e.target;
         });
         search.insertBefore(new_el, first);
     }
     else {
         Window_info_card.style.display = "none";
         open_close_info_card = 0;
-        let search = document.getElementById('123');
+        let search = document.getElementById('window_card');
         let first = search.firstChild;
         first.remove();
     }
 }
 
-
-//функции закрытия и открытия окна со специальными картами
+//функция закрытия и открытия окна со специальными картами
 var open_close_special_card = 0;
 var Open_Special_Race_Card = function() {
     let Window_Special_Card = document.querySelector(".window_player_race_card");
@@ -202,8 +203,7 @@ var Open_Special_Curse_Card = function() {
 }
 
 
-
-var id_card = 0;
+var card;
 //функция добавления карт в руку
 var add_card_in_hand = function () {
 
@@ -213,12 +213,13 @@ var add_card_in_hand = function () {
     let treasure = document.getElementById("treasures");
 
     //переменная с картой
-    let card = document.createElement("div");
+    card = document.createElement("div");
     card.className = "card card_in_hend";
-
+    
     doors.onclick = function (){
         let tmp = dungeon[dungeon.length - 1];
         dungeon.pop();
+        card.id = "dung";
         for (let k in tmp){
             card.innerHTML += tmp[k] + '<br>';
         }
@@ -227,33 +228,29 @@ var add_card_in_hand = function () {
     treasure.onclick = function() {
         let tmp = treasures[treasures.length - 1];
         treasures.pop();
+        card.id = "treas";
         for (let k in tmp){
             card.innerHTML += tmp[k] + '<br>';
         }
     }
 
-
     card.onclick = Open_Info_Card;
-
     hend.append(card);
-
 }
 
+
+var drops_cards = [];
 //функция выбрасывания карты
 var drop_card_out_hand = function () {
     let drop = document.getElementById('drop_doors');
-    let hand = document.getElementById('Hend');
-    let new_el = document.createElement('div');
-    new_el.className = "card";
-        hand.addEventListener('click', function(){
-            new_el.innerHTML = sas.innerHTML;
-        });
-    drop.append(new_el);
-}
-
-
-function compareRandom(a, b) {
-return Math.random() - 0.5;
+    let treas = document.getElementById("drop_treasures");
+    if (card_in_h.id === "dung")
+        drop.innerHTML = card_in_h.innerHTML;
+    else if (card_in_h.id === "treas")
+        treas.innerHTML = card_in_h.innerHTML;
+    drops_cards.push(card_in_h)
+    card_in_h.remove();
+    console.log(card_in_h);
 }
 
 
@@ -356,6 +353,11 @@ class Person {
 
 var dungeon = [];
 var treasures = [];
+
+function compareRandom(a, b) {
+    return Math.random() - 0.5;
+    }
+
 function Deck(){
 for (let i = 0; i < monsters.length; i++){
     let tmp = new Enemy(monsters[i][0], monsters[i][1], monsters[i][2], monsters[i][3], monsters[i][4], monsters[i][5]);
